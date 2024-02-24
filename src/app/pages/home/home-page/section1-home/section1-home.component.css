@@ -1,0 +1,253 @@
+main {
+  max-width: 170rem;
+  margin: 0 auto;
+}
+
+
+.main-groups {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  gap: 3rem;
+  margin-bottom: 10rem;
+}
+
+
+.left-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 90rem;
+  max-width: 100%;
+}
+
+
+.left-group h1 {
+  font-size: 7rem;
+  line-height: 7rem;
+  font-weight: 800;
+  color: var(--title);
+  line-height: 8rem;
+  max-width: 100%;
+}
+
+.left-group p {
+  font-weight: 500;
+  font-size: 1.9rem;
+  color: var(--text-p);
+  max-width: 98%;
+  line-height: 3rem;
+}
+
+
+.select-container {
+  display: flex;
+  align-items: center;
+  border-radius: .5rem;
+}
+
+.select-container .select-group select {
+  cursor: pointer;
+  padding-left: .5rem;
+  width: 28.3rem;
+  height: 10rem;
+  font-size: 2rem;
+  border: none;
+  border-right: 1px solid var(--texto-cinza);
+}
+
+
+
+.select-container .select-btn button {
+  position: relative;
+  z-index: 4;
+  cursor: pointer;
+  width: 23.3rem;
+  height: 10rem;
+  font-size: 2rem;
+  border: none;
+  background-color: var(--verde);
+  color: #ffff;
+}
+
+
+.select-container .select-btn button:hover {
+  color: var(--background);
+}
+
+
+.right-group {
+  position: relative;
+  display: flex;
+  max-width: 100%;
+}
+
+.right-group img {
+  position: relative;
+  width: 70rem;
+  max-width: 100%;
+}
+
+.logos-group {
+  display: flex;
+  margin-bottom: 10rem;
+  gap: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+
+
+
+@media (max-width: 1467px) {
+  .main-groups {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .left-group h1 {
+    font-size: 7rem;
+    line-height: 7rem;
+  }
+
+  .left-group p {
+    font-weight: 500;
+    font-size: 1.9rem;
+    color: var(--text-p);
+    max-width: 100%;
+    line-height: 3rem;
+  }
+
+  .select-container .select-group select {
+    width: 20.3rem;
+    height: 10rem;
+    font-size: 2rem;
+    border: none;
+    border-right: 1px solid var(--texto-cinza);
+  }
+
+  .select-container .select-btn button {
+    width: 17.3rem;
+    height: 10rem;
+    font-size: 2rem;
+    border: none;
+    background-color: var(--verde);
+    color: #ffff;
+  }
+
+  .left-group {
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .right-group {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logos-group img {
+    width: 10rem;
+  }
+
+}
+
+@media (max-width: 830px) {
+
+  .left-group h1 {
+    font-size: 5rem;
+    line-height: 5.4rem;
+  }
+
+  .left-group p {
+    font-size: 1.6rem;
+    color: var(--text-p);
+    width: 52rem;
+    max-width: 100%;
+    line-height: 2.2rem;
+  }
+
+  .select-container .select-group select {
+    width: 15.3rem;
+    max-width: 100%;
+    height: 10rem;
+    font-size: 2rem;
+    border: none;
+    border-right: 1px solid var(--texto-cinza);
+  }
+
+
+
+  .select-container .select-btn button {
+    width: 12.3rem;
+    max-width: 100%;
+    height: 10rem;
+    font-size: 2rem;
+    border: none;
+    background-color: var(--verde);
+    color: #ffff;
+  }
+
+
+  .logos-group {
+    display: flex;
+    gap: 3rem;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+
+
+  @media (max-width: 630px) {
+    .select-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: .5rem;
+    }
+
+    .select-container .select-group select {
+      width: 40rem;
+    }
+
+    .select-container .select-btn button {
+      width: 40rem;
+    }
+
+  }
+
+  @media (max-width: 430px) {
+    .select-container .select-group select {
+      width: 30rem;
+    }
+
+    .select-container .select-btn button {
+      width: 30rem;
+    }
+
+    .logos-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+    }
+
+  }
+
+  @media (max-width: 330px) {
+    .select-container .select-group select {
+      width: 25rem;
+    }
+
+    .select-container .select-btn button {
+      width: 25rem;
+    }
+  }
+}

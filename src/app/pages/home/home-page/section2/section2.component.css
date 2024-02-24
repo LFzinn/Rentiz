@@ -1,0 +1,288 @@
+section {
+  max-width: 100%;
+  background-image: url('../../../../../assets/images/popular-residence.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+
+}
+
+
+.section2-container {
+  max-width: 170rem;
+  margin: 0 auto;
+  padding: 10rem 0;
+}
+
+.container {
+  text-align: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+
+.title-box {
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-transform: uppercase;
+}
+
+
+.title-box h2 {
+  font-size: 4.8rem;
+  margin-bottom: 2rem;
+  font-weight: 800;
+}
+
+.title-box h2 b {
+  color: var(--verde);
+  font-weight: 800;
+}
+
+.slide-box {
+  position: relative;
+}
+
+.btn-box {
+  position: absolute;
+  right: 0;
+  top: -8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 11.5rem;
+  height: 6.1rem;
+}
+
+.rectangle {
+  margin-bottom: .8rem;
+}
+
+#next-btn {
+  cursor: pointer;
+  width: 3rem;
+  height: 3.8rem;
+  color: var(--verde);
+}
+
+#prev-btn {
+  cursor: pointer;
+  width: 3rem;
+  height: 3.8rem;
+  color: var(--verde);
+}
+
+
+.swiper-container {
+  cursor: grab;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.slider-txt {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 1.9rem;
+  max-width: 100%;
+}
+
+.slider-txt .title {
+  font-size: 2.7rem;
+}
+
+.slider-txt .description {
+  color: var(--texto-cinza);
+}
+
+
+.details {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.details-group {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+
+}
+
+
+.details .details-group img {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.details-group span {
+  font-size: 1.6rem;
+}
+
+
+.swiper-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 55rem;
+  height: 40rem;
+  object-fit: cover;
+}
+
+
+.section2-container button {
+  cursor: pointer;
+  color: #ffff;
+  max-width: 100%;
+  border: none;
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin-top: 6.7rem;
+  width: 30.6rem;
+  height: 7.2rem;
+  background-color: var(--verde);
+}
+
+.section2-container button:hover {
+  color: var(--background);
+}
+
+
+.swiper-button-next {
+  position: absolute;
+  z-index: 9;
+}
+
+
+@media (max-width: 1150px) {
+  .slider-txt {
+    gap: 1.5rem;
+  }
+
+  .slider-txt .title {
+    font-size: 2rem;
+  }
+
+  .slider-txt .description {
+    color: var(--texto-cinza);
+  }
+
+  .details {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+}
+
+
+@media (max-width:1024px) {
+  .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .title-box {
+    margin-bottom: 10rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .drag-box span {
+    display: none;
+  }
+
+
+}
+
+@media (max-width: 576px) {
+  .btn-box {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: -8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .rectangle {
+    display: none;
+  }
+
+  #next-btn {
+    cursor: pointer;
+    width: 3rem;
+    height: 3.8rem;
+    color: var(--verde);
+  }
+
+  #prev-btn {
+    cursor: pointer;
+    width: 3rem;
+    height: 3.8rem;
+    color: var(--verde);
+  }
+
+  .slider-txt {
+    text-align: center;
+  }
+
+  .details {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .section2-container .container h2 {
+    font-size: 3.5rem;
+  }
+
+  .drag-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    right: 0;
+    z-index: 4;
+    top: 3.6rem;
+    color: var(--verde);
+    font-weight: 700;
+  }
+
+}
+
+@media (max-width: 460px) {
+  .details-group {
+    flex-direction: column;
+  }
+
+  .details-group span {
+    font-size: 1.3rem;
+  }
+
+}
+
+@media (max-width: 430px) {
+  .drag-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 9rem;
+    right: auto;
+    color: var(--verde);
+  }
+}

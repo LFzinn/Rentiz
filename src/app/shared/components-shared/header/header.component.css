@@ -1,0 +1,18 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4rem 0;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 4rem;
+}
+
+.nav-menu li a {
+  color: var(--texto-cinza);
+  font-size: 1.8rem;
+}

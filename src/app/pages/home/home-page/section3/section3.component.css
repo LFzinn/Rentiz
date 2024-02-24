@@ -1,0 +1,173 @@
+section {
+  max-width: 170rem;
+  margin: 0 auto;
+}
+
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+
+}
+
+
+
+.chooseUs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 18rem;
+  width: 100%;
+}
+
+
+.chooseUs .title {
+  margin-bottom: 6rem;
+  font-size: 4.8rem;
+  font-weight: 700;
+  width: 53rem;
+  max-width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+
+}
+
+
+.chooseUs .title b {
+  color: var(--verde);
+  font-weight: 700;
+}
+
+
+.box-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+  width: 35rem;
+  max-width: 100%;
+}
+
+
+.box h3 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  width: 19rem;
+  text-transform: uppercase;
+}
+
+.box h3 b {
+  font-weight: 800;
+  color: var(--verde);
+}
+
+
+.bg-assets {
+  position: absolute;
+  left: -15rem;
+  top: 30%;
+}
+
+.rate-container {
+  position: relative;
+  margin-top: 16rem;
+  display: flex;
+  align-items: center;
+}
+
+
+.swiper {
+  width: 100.8rem;
+  height: 43.5rem;
+  max-width: 100%;
+}
+
+
+.swiper-slide {
+  cursor: grab;
+  flex-direction: column;
+  display: flex;
+  gap: 4rem;
+}
+
+
+.swiper-slide img {
+  width: 6.2rem;
+  height: 4.7rem;
+}
+
+.swiper-slide .msg {
+  font-size: 3.2rem;
+  line-height: 157%;
+}
+
+.person-details {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+
+@media (max-width: 1400px) {
+  .bg-assets {
+    display: none;
+  }
+
+  .swiper {
+    width: 100%;
+    text-align: center;
+  }
+
+  .swiper-slide {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+
+@media (max-width: 1190px) {
+  .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 760px) {
+  .swiper {
+    height: 50rem;
+  }
+
+  .swiper-slide .msg {
+    font-size: 2rem;
+    line-height: 157%;
+  }
+}
+
+
+@media (max-width:576px) {
+  .chooseUs .title {
+    font-size: 3.5rem;
+  }
+
+}

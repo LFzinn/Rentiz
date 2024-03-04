@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/components-shared/header/header.component';
+import { FooterComponent } from './shared/components-shared/footer/footer.component';
+
 
 @Component({
   selector: 'app-root',
@@ -10,6 +12,7 @@ import { HeaderComponent } from './shared/components-shared/header/header.compon
     CommonModule,
     RouterOutlet,
     HeaderComponent,
+    FooterComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']

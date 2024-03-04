@@ -1,16 +1,5 @@
-/*
-
-breakpoint-xsmall: 320px;
-breakpoint-small: 544px;
-breakpoint-medium: 768px;
-breakpoint-large: 1012px;
-breakpoint-xlarge: 1280px;
-breakpoint-xxlarge: 1440px;
-
-*/
-
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 15px;
 }
 
 ::-webkit-scrollbar-thumb {

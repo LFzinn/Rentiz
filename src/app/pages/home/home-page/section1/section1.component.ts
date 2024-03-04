@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-section1-home',
+  selector: 'app-section1',
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './section1-home.component.html',
-  styleUrl: './section1-home.component.css'
+  templateUrl: './section1.component.html',
+  styleUrl: './section1.component.css'
 })
-export class Section1HomeComponent {
+export class Section1Component {
 
 
   purpose: string[] = [];

@@ -1,0 +1,112 @@
+section {
+  margin-top: 8rem;
+  background: linear-gradient(to left, #1A242F, #121B25);
+
+}
+
+
+.contact-container {
+  margin: 0 auto;
+  width: 170rem;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6.3rem;
+}
+
+.images-box {
+  display: flex;
+  gap: 2rem;
+  margin: 16rem 0 16rem 2rem;
+
+}
+
+.text-box {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  gap: 4.5rem;
+  margin-right: 2rem;
+}
+
+.text-box h4 {
+  font-size: 6rem;
+  font-weight: 700;
+  max-width: 100%;
+}
+
+
+.text-box span {
+  line-height: 157%;
+  font-size: 1.8rem;
+  color: var(--texto-cinza);
+  max-width: 100%;
+}
+
+
+.contact-btn {
+  cursor: pointer;
+  font-size: 2.4rem;
+  width: 23.3rem;
+  height: 7.2rem;
+  border: none;
+  background-color: var(--verde);
+  color: #ffff;
+}
+
+
+.contact-btn:hover {
+  color: var(--background);
+}
+
+
+@media (max-width: 1515px) {
+  .contact-container {
+    gap: 2rem;
+  }
+
+  .text-box {
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+
+
+
+@media (max-width: 1300px) {
+  .contact-container {
+    flex-direction: column-reverse;
+  }
+
+  .text-box {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100rem;
+    max-width: 100%;
+    margin: 5rem 2rem 0 2rem;
+  }
+
+  .images-box {
+    margin: 5rem 2rem;
+
+  }
+
+  .images-box img {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .text-box h4 {
+    font-size: 4rem;
+  }
+
+
+  .text-box span {
+    font-size: 1.6rem;
+  }
+
+}

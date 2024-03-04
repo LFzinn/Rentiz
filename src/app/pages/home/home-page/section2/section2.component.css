@@ -56,21 +56,16 @@ section {
   height: 6.1rem;
 }
 
-.rectangle {
-  margin-bottom: .8rem;
-}
 
 #next-btn {
   cursor: pointer;
   width: 3rem;
-  height: 3.8rem;
   color: var(--verde);
 }
 
 #prev-btn {
   cursor: pointer;
   width: 3rem;
-  height: 3.8rem;
   color: var(--verde);
 }
 

@@ -29,8 +29,6 @@ export class HousesService {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-
-
   filterData(purpose: string, location: string, type: string, minRooms: number = 0, minBath: number = 0) {
     let params: { [param: string]: string } = {};
     if (purpose) {
@@ -54,12 +52,17 @@ export class HousesService {
 
   selected: { purpose: string, location: string, type: string } = { purpose: '', location: '', type: '' };
 
+
   setSelectedData(purpose: string, location: string, type: string) {
     this.selected = { purpose, location, type };
   }
 
   getSelectedData() {
     return this.selected;
+  }
+
+  getHouseById(id: string) {
+    return this.http.get(`${this.baseUrl}/houses/${id}`);
   }
 
 

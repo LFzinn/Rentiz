@@ -3,8 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
-import { Houses } from '../../../../shared/models/housesModel';
-import { HousesService } from '../../../../shared/services/houses.service';
+import { Houses } from '../../../shared/models/housesModel';
+import { HousesService } from '../../../shared/services/houses.service';
 
 @Component({
   selector: 'app-section1',

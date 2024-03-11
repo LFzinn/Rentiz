@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TitlePageComponent } from '../../../../shared/components-shared/title-page/title-page.component';
+import { TitlePageComponent } from '../../../shared/components-shared/title-page/title-page.component';
 
 @Component({
   selector: 'app-section1',

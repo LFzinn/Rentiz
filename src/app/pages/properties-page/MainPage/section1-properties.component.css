@@ -14,6 +14,7 @@ section {
 .select-group {
   height: 4rem;
   background-color: var(--verde);
+  border-radius: .2rem;
 
 }
 
@@ -28,14 +29,20 @@ section {
 }
 
 .select-btn {
+  flex-wrap: wrap;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
   height: 4rem;
-  background-color: #fff;
 }
 
 .select-btn button {
+  border-radius: .2rem;
+  width: 12rem;
+  background-color: #fff;
   cursor: pointer;
   height: 100%;
-  background: none;
   border: none;
   padding: 0 1rem;
   font-size: 1.8rem;

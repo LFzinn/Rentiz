@@ -29,7 +29,7 @@
     </div>
 
     <div class="select-group">
-      <select [(ngModel)]="minRooms">
+      <select [(ngModel)]="selected.minRooms">
         <option value="0">Quartos</option>
         <option value="2">2+</option>
         <option value="3">3+</option>
@@ -41,7 +41,7 @@
 
 
     <div class="select-group">
-      <select [(ngModel)]=" minBath">
+      <select [(ngModel)]="selected.minBath">
         <option value="0">Banheiros</option>
         <option value="2">2+</option>
         <option value="3">3+</option>
@@ -53,13 +53,16 @@
 
     <div class="select-btn">
       <button type="button" (click)="Search()">Pesquisar</button>
+      <button type="button" (click)="clear()">Limpar</button>
     </div>
 
   </div>
   <div class="images-container">
     @for (house of houses; track $index) {
     <div class="box-images">
-      <img class="house-image" [src]="'http://localhost:3000' + house.image" alt="imagem de casa">
+      <a [routerLink]="['/casa', house.id]">
+        <img class="house-image" [src]="'http://localhost:3000' + house.image" alt="imagem de casa">
+      </a>
       <div class="house-txt">
         <span class="title">{{house.name}}</span>
         <span class="description">{{house.type}}, {{ house.location }}</span>
@@ -87,11 +90,11 @@
   </div>
   <div class="btn-container">
     <button (click)="previousPage()">
-      <img class="left arrow" src="../../../../../assets/icons/seta-direita.png" alt="icone de seta">
+      <img class="left arrow" src="../../../../assets/icons/seta-direita.png" alt="icone de seta">
     </button>
     <span class="currentPage">{{this.currentPage}}</span>
-    <button (click)="nextPage()" [disabled]="canGoToNextPage()">
-      <img class="right arrow" src="../../../../../assets/icons/seta-direita.png" alt="icone de seta">
+    <button (click)="nextPage()">
+      <img class="right arrow" src="../../../../assets/icons/seta-direita.png" alt="icone de seta">
     </button>
   </div>
 </section>

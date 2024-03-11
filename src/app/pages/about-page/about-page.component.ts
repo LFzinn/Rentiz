@@ -11,6 +11,6 @@ import { Section1Component } from './section1/section1.component';
   templateUrl: './about-page.component.html',
   styleUrl: './about-page.component.css'
 })
-export class AboutPageComponent {
+export default class AboutPageComponent {
 
 }

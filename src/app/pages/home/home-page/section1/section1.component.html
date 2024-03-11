@@ -11,7 +11,7 @@
 
 
           <div class="select-group">
-            <select [(ngModel)]="purpose">
+            <select [(ngModel)]="selected.purpose">
               <option value="" disabled selected hidden>Propósito</option>
               <option value="alugar">Alugar</option>
               <option value="comprar">Comprar</option>
@@ -19,19 +19,19 @@
           </div>
 
           <div class="select-group">
-            <select [(ngModel)]="type">
+            <select [(ngModel)]="selected.type">
               <option value="" disabled selected hidden>Tipo</option>
               <option value="casa">Casa</option>
-              <option value="apto">Apartamento</option>
+              <option value="apartamento">Apartamento</option>
             </select>
           </div>
 
           <div class="select-group">
-            <select id="location" [(ngModel)]="location">
+            <select [(ngModel)]="selected.location">
               <option value="" disabled selected hidden>Estado</option>
-              <option value="sp">São Paulo</option>
-              <option value="sc">Florianópolis</option>
-              <option value="rj">Rio de Janeiro</option>
+              <option value="São Paulo">São Paulo</option>
+              <option value="Florianópolis">Florianópolis</option>
+              <option value="Rio de Janeiro">Rio de Janeiro</option>
             </select>
           </div>
 

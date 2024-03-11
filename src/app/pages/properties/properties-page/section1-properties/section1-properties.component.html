@@ -1,1 +1,97 @@
-<p>section1-properties works!</p>
+<app-title-page title="Propriedades" />
+
+<section>
+  <div class="filter-container">
+
+    <div class="select-group">
+      <select [(ngModel)]="selected.purpose">
+        <option value="" disabled selected hidden>Propósito</option>
+        <option value="alugar">Alugar</option>
+        <option value="comprar">Comprar</option>
+      </select>
+    </div>
+
+    <div class="select-group">
+      <select [(ngModel)]="selected.type">
+        <option value="" disabled selected hidden>Tipo</option>
+        <option value="casa">Casa</option>
+        <option value="apartamento">Apartamento</option>
+      </select>
+    </div>
+
+    <div class="select-group">
+      <select [(ngModel)]="selected.location">
+        <option value="" disabled selected hidden>Estado</option>
+        <option value="São Paulo">São Paulo</option>
+        <option value="Florianópolis">Florianópolis</option>
+        <option value="Rio de Janeiro">Rio de Janeiro</option>
+      </select>
+    </div>
+
+    <div class="select-group">
+      <select [(ngModel)]="minRooms">
+        <option value="0">Quartos</option>
+        <option value="2">2+</option>
+        <option value="3">3+</option>
+        <option value="4">4+</option>
+        <option value="5">5+</option>
+        <option value="6">6+</option>
+      </select>
+    </div>
+
+
+    <div class="select-group">
+      <select [(ngModel)]=" minBath">
+        <option value="0">Banheiros</option>
+        <option value="2">2+</option>
+        <option value="3">3+</option>
+        <option value="4">4+</option>
+        <option value="5">5+</option>
+        <option value="6">6+</option>
+      </select>
+    </div>
+
+    <div class="select-btn">
+      <button type="button" (click)="Search()">Pesquisar</button>
+    </div>
+
+  </div>
+  <div class="images-container">
+    @for (house of houses; track $index) {
+    <div class="box-images">
+      <img class="house-image" [src]="'http://localhost:3000' + house.image" alt="imagem de casa">
+      <div class="house-txt">
+        <span class="title">{{house.name}}</span>
+        <span class="description">{{house.type}}, {{ house.location }}</span>
+        <div class="details">
+          <div class="details-group">
+            <img src="../../../../../assets/icons/la_bed.png" alt="icone cama">
+            <span>{{ house.rooms }} Quartos</span>
+          </div>
+          <div class="details-group">
+            <img src="../../../../../assets/icons/la_bath.png" alt="icone banheira">
+            <span>{{ house.bathroom }} Banheiros</span>
+          </div>
+          <div class="details-group">
+            <img src="../../../../../assets/icons/la_vector-square.png" alt="icone area">
+            <span>{{ house.sqft }} m²</span>
+          </div>
+        </div>
+        <div class="purpose">
+          <span>Para {{ house.purpose }}</span>
+          <span>Preço: ${{ house.price }}</span>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+  <div class="btn-container">
+    <button (click)="previousPage()">
+      <img class="left arrow" src="../../../../../assets/icons/seta-direita.png" alt="icone de seta">
+    </button>
+    <span class="currentPage">{{this.currentPage}}</span>
+    <button (click)="nextPage()" [disabled]="canGoToNextPage()">
+      <img class="right arrow" src="../../../../../assets/icons/seta-direita.png" alt="icone de seta">
+    </button>
+  </div>
+</section>

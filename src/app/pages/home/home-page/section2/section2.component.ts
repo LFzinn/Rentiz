@@ -1,9 +1,11 @@
+import { HousesService } from './../../../../shared/services/houses.service';
 import 'swiper/swiper-bundle.css';
 
 import { AfterViewInit, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import Swiper from 'swiper';
 import { register as registerSwiperElements } from 'swiper/element/bundle';
+import { Houses } from '../../../../shared/models/housesModel';
 
 
 registerSwiperElements();
@@ -15,14 +17,22 @@ registerSwiperElements();
   styleUrl: './section2.component.css'
 })
 export class Section2Component implements AfterViewInit {
+  houses: Houses[] = [];
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private HousesService: HousesService
+    ) {}
+
 
   ngAfterViewInit(): void {
+    this.HousesService.getHouses().subscribe(Houses => {
+      this.houses = Houses;
+    });
     var swiper = new Swiper(".swiper-container", {
       slidesPerView: 1,
       spaceBetween: 5,
-      loop: true,
+      loop: false,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",

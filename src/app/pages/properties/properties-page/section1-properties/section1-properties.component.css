@@ -1,0 +1,168 @@
+section {
+  margin: auto 2rem;
+}
+
+.filter-container {
+  max-width: 170rem;
+  margin: 13rem auto;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+
+.select-group {
+  height: 4rem;
+  background-color: var(--verde);
+
+}
+
+.select-group select {
+  cursor: pointer;
+  color: var(--background);
+  padding: 0 1rem;
+  font-size: 1.8rem;
+  height: 100%;
+  background: none;
+  border: none;
+}
+
+.select-btn {
+  height: 4rem;
+  background-color: #fff;
+}
+
+.select-btn button {
+  cursor: pointer;
+  height: 100%;
+  background: none;
+  border: none;
+  padding: 0 1rem;
+  font-size: 1.8rem;
+}
+
+.images-container {
+  max-width: 170rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  gap: 3.3rem;
+}
+
+.box-images {
+  width: 40rem;
+  max-width: 100%;
+}
+
+.images-container .house-image {
+  width: 40rem;
+  height: 30rem;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.house-txt {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.house-txt .title {
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+
+.house-txt .description {
+  color: var(--texto-cinza);
+  font-size: 1.8rem;
+  text-transform: capitalize;
+}
+
+.house-txt .details {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+.house-txt .details .details-group {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.purpose {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--texto-cinza);
+}
+
+.purpose span {
+  margin-top: 2rem;
+  text-transform: capitalize;
+  font-size: 1.8rem;
+
+}
+
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  margin: 18rem auto;
+}
+
+
+.btn-container button {
+  height: 4rem;
+  width: 5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  background-color: aliceblue;
+  border-radius: 0.5rem;
+}
+
+.arrow {
+  width: 2rem;
+  height: 2rem;
+}
+
+
+.btn-container .left {
+  transform: scaleX(-1);
+}
+
+.currentPage {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--verde);
+}
+
+
+@media (max-width: 768px) {
+  .filter-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 410px) {
+  .house-txt {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .details {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .purpose {
+    width: 100%;
+  }
+}

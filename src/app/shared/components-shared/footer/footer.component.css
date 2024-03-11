@@ -1,9 +1,17 @@
+footer {
+  background-color: #1a242f;
+  height: 50rem;
+
+}
+
 .footer-container {
   display: flex;
   justify-content: space-around;
+  height: 100%;
+  align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
-  margin: 2rem 15rem;
+  margin: auto 15rem;
 }
 
 
@@ -71,6 +79,7 @@
   padding: 1rem 0;
   text-align: center;
   font-size: 1.3rem;
+
 }
 
 
@@ -83,7 +92,18 @@
 }
 
 
-@media (max-width: 640px) {
+@media (max-width: 850px) {
+  footer {
+    height: auto;
+  }
+
+  .footer-container {
+    padding: 2rem 0;
+  }
+}
+
+
+@media (max-width: 768px) {
   .footer-container {
     justify-content: center;
     text-align: center;

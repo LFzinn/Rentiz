@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+
+import { Houses } from '../../../../shared/models/housesModel';
+import { HousesService } from '../../../../shared/services/houses.service';
 
 @Component({
   selector: 'app-section1',
@@ -10,38 +13,54 @@ import Swal from 'sweetalert2';
   templateUrl: './section1.component.html',
   styleUrl: './section1.component.css'
 })
-export class Section1Component {
+export class Section1Component implements OnInit{
+
+  houses: Houses[] = [];
+
+  constructor(private router: Router, private HousesService: HousesService) {}
+
+  ngOnInit() {
+    this.HousesService.getHouses().subscribe(Houses => {
+      this.houses = Houses;
+    });
+  }
 
 
-  purpose: string[] = [];
-  location: string[] = [];
-  type: string[] = [];
+  selected: { purpose: string, location: string, type: string } = { purpose: '', location: '', type: '' };
 
-  constructor(private router: Router) {}
+  purposeSelected(event: Event) {
+    const target = event.currentTarget as HTMLSelectElement;
+    this.selected.purpose = target.value;
+  }
+
+  locationSelected(event: Event) {
+    const target = event.currentTarget as HTMLSelectElement;
+    this.selected.location = target.value;
+  }
+
+  typeSelected(event: Event) {
+    const target = event.currentTarget as HTMLSelectElement;
+    this.selected.type = target.value;
+  }
 
 
   search() {
-    const queryParams = {
-      options: [this.purpose, this.type, this.location].join(',')
+    if (this.selected.purpose || this.selected.location || this.selected.type) {
+      this.HousesService.filterData(this.selected.purpose, this.selected.location, this.selected.type)
+        .subscribe(filteredData => {
+          if (filteredData.length === 0) {
+            Swal.fire({
+              width: "40em",
+              icon: "error",
+              title: "Não temos essa opção no momento",
+            });
+          } else {
+            this.HousesService.setSelectedData(this.selected.purpose, this.selected.location, this.selected.type);
+            this.router.navigate(['/properties']);
+          }
+        });
     }
 
-    if( queryParams.options.length === 2 ) {
-      Swal.fire({
-        title: "Quer Conhecer Todas as Opções?",
-        showDenyButton: false,
-        showCancelButton: true,
-        confirmButtonText: "Sim",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire("Saved!", "", "success");
-        } else if (result.isDenied) {
-          Swal.fire("Changes are not saved", "", "info");
-        }
-      });
-    } else {
-      this.router.navigate(['/properties'], { queryParams });
-
-    }
 
   }
 

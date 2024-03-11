@@ -10,7 +10,7 @@ import { PropertiesRoutingModule } from './properties-routing.module';
   imports: [
     CommonModule,
     PropertiesRoutingModule,
-    PropertiesPageComponent
+    PropertiesPageComponent,
   ]
 })
 export class PropertiesModule { }

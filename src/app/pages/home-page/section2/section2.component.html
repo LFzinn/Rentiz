@@ -16,7 +16,8 @@
 
             @for (house of houses; track $index) {
             <div class="swiper-slide">
-              <img class="house-image" [src]="'http://localhost:3000' + house.image" alt="imagem de casa">
+              <img class="house-image" [src]="'http://localhost:3000' + house.image" alt="imagem de casa"
+                (click)="showHouseDetails(house.id)">
               <div class="slider-txt">
                 <span class="title">{{ house.name }}</span>
                 <span class="description">{{ house.type }}, {{ house.location }}</span>

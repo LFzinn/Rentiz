@@ -61,10 +61,9 @@ export class HousesService {
     return this.selected;
   }
 
-  getHouseById(id: string) {
+  getHouseById(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/houses/${id}`);
   }
-
 
 
 }

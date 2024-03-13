@@ -60,9 +60,8 @@
   <div class="images-container">
     @for (house of houses; track $index) {
     <div class="box-images">
-      <a [routerLink]="['/casa', house.id]">
-        <img class="house-image" [src]="'http://localhost:3000' + house.image" alt="imagem de casa">
-      </a>
+      <img class="house-image" [src]="'http://localhost:3000' + house.image" alt="imagem de casa"
+        (click)="showHouseDetails(house.id)">
       <div class="house-txt">
         <span class="title">{{house.name}}</span>
         <span class="description">{{house.type}}, {{ house.location }}</span>

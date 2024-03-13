@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Houses } from '../../../shared/models/housesModel';
 import { HousesService } from '../../../shared/services/houses.service';
 import { TitlePageComponent } from '../../../shared/components-shared/title-page/title-page.component';
-import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
     standalone: true,
     templateUrl: './section1-properties.component.html',
     styleUrl: './section1-properties.component.css',
-    imports: [FormsModule, TitlePageComponent, RouterModule]
+    imports: [ FormsModule, TitlePageComponent ]
 })
 
 
@@ -23,7 +23,7 @@ export class Section1PropertiesComponent implements OnInit {
     purpose: string, location: string, type: string, minRooms: number, minBath : number
   } = { purpose: '', location: '', type: '', minRooms : 0, minBath : 0};
 
-  constructor(private HousesService: HousesService) { }
+  constructor(private HousesService: HousesService, private router : Router) { }
 
   ngOnInit() {
     this.loadHouses();
@@ -75,7 +75,6 @@ export class Section1PropertiesComponent implements OnInit {
     }
   }
 
-
   clear(): void {
     this.selected.purpose = '';
     this.selected.location = '';
@@ -85,12 +84,10 @@ export class Section1PropertiesComponent implements OnInit {
     this.Search();
   }
 
-
-  getID(): void {
-    this.HousesService.getHouseById('');
+  showHouseDetails(id: number): void {
+    this.HousesService.getHouseById(id).subscribe((house) => {
+    this.router.navigate(['/details', id]);
+    });
   }
-
-
-
 
 }

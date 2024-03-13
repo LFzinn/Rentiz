@@ -30,7 +30,7 @@ export class Section2Component implements AfterViewInit {
     this.HousesService.getHouses().subscribe(Houses => {
       this.houses = Houses;
     });
-    var swiper = new Swiper(".swiper-container", {
+    new Swiper(".swiper-container", {
       slidesPerView: 1,
       spaceBetween: 5,
       loop: false,
@@ -58,6 +58,13 @@ export class Section2Component implements AfterViewInit {
 
     search(): void {
       this.router.navigate(['/properties']);
+    }
+
+
+    showHouseDetails(id: number): void {
+      this.HousesService.getHouseById(id).subscribe((house) => {
+      this.router.navigate(['/details', id]);
+      });
     }
 
 }

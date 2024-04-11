@@ -1,8 +1,132 @@
-<div class="houses">
+<app-title-page title="Detalhes" />
 
-  @for (house of houses; track $index) {
-  <span>{{ house?.name }}</span>
-  <span>{{ house?.id }}</span>
-  }
+<section>
+  <div class="container">
+    <div class="box1">
+      @for (house of houses; track $index) {
+      <img class="house-image" [src]="'http://localhost:3000' + house.image" alt="casa">
+      }
+      <div class="form-box" id="form-box">
+        @if (loading) {
+        <div class="loading">
+          <img src="../../../../assets/gifs/icons8-círculo-de-carga.gif" alt="">
+        </div>
+        }
+        @if (successMessage) {
+        <div class="loading">
+          <span>Enviaremos um email com mais detalhes</span>
+          <button class="btn-success" type="button" (click)="backToForm()">voltar ao formulário</button>
+        </div>
+        }
+        <span class="form-title">Agendar Uma visita</span>
+        <form [formGroup]="dataForm" (ngSubmit)="submitForm()">
+          <div class="form-content">
+            <label for="name">Nome Completo</label>
+            <input type="text" formControlName="name" id="name" placeholder="Nome completo">
+          </div>
 
-</div>
+          <div class="form-content">
+            <div class="validator-box">
+              <label for="email">Email *</label>
+              @if (this.validatorError == true) {
+              <span class="validator">obrigatório</span>
+              }
+            </div>
+            <input type="text" formControlName="email" id="email" placeholder="email@email.com">
+          </div>
+
+          <div class="form-content">
+            <label for="phone">Número</label>
+            <input type="number" formControlName="phone" id="phone" placeholder="(DDD) 988888888">
+          </div>
+
+          <div class="form-content">
+            <label for="people">Pessoas</label>
+            <input type="text" formControlName="people" id="people" placeholder="Número de pessoas">
+          </div>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="box2">
+      <div class="details-icons">
+        <div class="icon-group">
+          <div class="image-details">
+            <img class="fix" src='../../../../assets/icons/bed.png' alt="cama">
+          </div>
+          @for (house of houses; track $index) {
+          <div class="text-details">
+            <span class="text-detailTitle">Quartos</span>
+            <span class="result">{{house.rooms}}</span>
+          </div>
+          }
+        </div>
+
+        <div class="icon-group">
+          <div class="image-details">
+            <img src='../../../../assets/icons/banheira.png' alt="Banheiros">
+          </div>
+          @for (house of houses; track $index) {
+          <div class="text-details">
+            <span class="text-detailTitle">Banheiros</span>
+            <span class="result">{{house.bathroom}}</span>
+          </div>
+          }
+        </div>
+
+        <div class="icon-group">
+          <div class="image-details">
+            <img src='../../../../assets/icons/area.png' alt="cama">
+          </div>
+          @for (house of houses; track $index) {
+          <div class="text-details">
+            <span class="text-detailTitle">m²</span>
+            <span class="result">{{house.sqft}}</span>
+          </div>
+          }
+        </div>
+
+      </div>
+    </div>
+
+    <div class="box3">
+      <h4 class="box3-title">Detalhes</h4>
+      <div class="content-container">
+        @for (house of houses; track $index) {
+        <div class="content">
+          <span><b>Propósito</b> : {{house.purpose}}</span>
+          <span><b>Preço</b> : R$ {{house.price}}</span>
+          <span><b>Quartos</b> : {{house.rooms}}</span>
+          <span><b>Banheiros</b> : {{house.bathroom}}</span>
+          <span><b>Estado</b> : {{house.location}}</span>
+        </div>
+        }
+        <div class="content">
+          <h5 class="box3-title">Recursos e comodidades</h5>
+          <ul>
+            <li><span><b>Ar condicionado</b></span></li>
+            <li><span><b>Piscina</b></span></li>
+            <li><span><b>Academia</b></span></li>
+            <li><span><b>Bar</b></span></li>
+            <li><span><b>Churrasqueira</b></span></li>
+          </ul>
+        </div>
+
+        <div class="content">
+          <h5 class="box3-title">Pontos de interesse</h5>
+          <span>Perto de <b>mercados</b></span>
+          <span>perto do <b>Shopping center</b></span>
+          <span>muito proximo a <b>academias</b></span>
+        </div>
+
+        <div class="content2">
+          <span>Preencha o formulario para marcar uma visita</span>
+          <button type="button" (click)="scrollToElement('form-box')">Tenho interesse</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

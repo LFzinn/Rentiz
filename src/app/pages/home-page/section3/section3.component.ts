@@ -22,7 +22,7 @@ export class Section3Component implements AfterViewInit {
 
   ngAfterViewInit(): void {
     var swiper = new Swiper(".mySwiper", {
-      direction: "vertical",
+      direction: "horizontal",
       slidesPerView: 1,
       spaceBetween: 5,
       loop: true,
@@ -31,8 +31,4 @@ export class Section3Component implements AfterViewInit {
       },
     });
   }
-
-
-
-
 }

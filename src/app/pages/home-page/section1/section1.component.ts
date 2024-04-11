@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2';
 
 import { Houses } from '../../../shared/models/housesModel';
 import { HousesService } from '../../../shared/services/houses.service';
@@ -43,26 +42,14 @@ export class Section1Component implements OnInit{
     this.selected.type = target.value;
   }
 
-
   search() {
-    if (this.selected.purpose || this.selected.location || this.selected.type) {
-      this.HousesService.filterData(this.selected.purpose, this.selected.location, this.selected.type)
-        .subscribe(filteredData => {
-          if (filteredData.length === 0) {
-            Swal.fire({
-              width: "40em",
-              icon: "error",
-              title: "Não temos essa opção no momento",
-            });
-          } else {
+    this.HousesService.filterData(this.selected.purpose, this.selected.location, this.selected.type)
             this.HousesService.setSelectedData(this.selected.purpose, this.selected.location, this.selected.type);
             this.router.navigate(['/properties']);
-          }
-        });
-    }
-
-
   }
 
-
 }
+
+
+
+

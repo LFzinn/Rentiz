@@ -1,23 +1,36 @@
 import { Component, OnInit } from '@angular/core';
-import { HousesService } from '../../../shared/services/houses.service';
 import { ActivatedRoute } from '@angular/router';
 
+import { TitlePageComponent } from '../../../shared/components-shared/title-page/title-page.component';
+import { HousesService } from '../../../shared/services/houses.service';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-section1',
   standalone: true,
-  imports: [],
+  imports: [TitlePageComponent, ReactiveFormsModule],
   templateUrl: './section1.component.html',
   styleUrl: './section1.component.css'
 })
 export class Section1Component implements OnInit {
   houses: any[] = [];
+  dataForm: FormGroup;
 
-
-  constructor(private HousesService : HousesService,  private route: ActivatedRoute,) {}
-
+  constructor(private HousesService : HousesService,
+    private route: ActivatedRoute,
+    private viewportScroller: ViewportScroller,
+    private formBuilder: FormBuilder) {
+      this.dataForm = this.formBuilder.group({
+        name: [''],
+        email: ['', [Validators.required, Validators.email]],
+        phone: ['', [Validators.pattern('[0-9]{11}')]],
+        people: [''],
+      });
+    }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     const idParam = this.route.snapshot.paramMap.get('id');
     if (idParam !== null) {
         const id = +idParam;
@@ -26,4 +39,39 @@ export class Section1Component implements OnInit {
         });
     }
   }
+
+  get email() { return this.dataForm.get('email'); }
+
+  validatorError:boolean = false;
+  loading:boolean = false;
+  successMessage:boolean = false;
+
+  submitForm() {
+    if (this.dataForm.get('email')?.invalid) {
+      this.validatorError = true;
+    } else if (this.dataForm.valid) {
+      this.loading = true;
+
+      setTimeout(() => {
+        console.log(this.dataForm.value);
+        this.loading = false;
+        this.successMessage = true;
+        this.dataForm.reset();
+      }, 2000);
+    }
+  }
+
+  backToForm() {
+    this.loading = false;
+    this.successMessage = false;
+  }
+
+  scrollToElement(elementId: string): void {
+    const element = document.getElementById(elementId);
+    if (element) {
+      this.viewportScroller.scrollToAnchor(elementId);
+    }
+  }
+
+
 }

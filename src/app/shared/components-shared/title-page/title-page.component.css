@@ -6,7 +6,7 @@
   background-image: url('../../../../assets/images/popular-residence.png');
   background-position: center;
   background-repeat: no-repeat;
-  margin-top: 10rem;
+  margin: 10rem 0;
 }
 
 .title-box {
@@ -21,29 +21,14 @@
   font-size: 8rem;
 }
 
-.title-box .box-link {
-  display: flex;
-  gap: 3rem;
-  font-size: 2rem;
-}
-
 @media (max-width: 570px) {
   .title-box .box-title {
     font-size: 5.5rem;
-  }
-
-  .title-box .box-link {
-    font-size: 1.8rem;
   }
 }
 
 @media (max-width: 410px) {
   .title-box .box-title {
     font-size: 4rem;
-  }
-
-  .title-box .box-link {
-    font-size: 1.8rem;
-    gap: 1rem;
   }
 }

@@ -9,25 +9,32 @@ import { Houses } from '../models/housesModel';
 export class HousesService {
   private baseUrl = 'http://localhost:3000';
   houses!: any[];
-  private page = 1;
-  private limit = 12;
+  page = 1;
+
 
   constructor(private http: HttpClient) {}
 
   getHouses(): Observable<Houses[]> {
-    return this.http.get<Houses[]>(`${this.baseUrl}/houses?_page=${this.page}&_limit=${this.limit}`);
+    return this.http.get<Houses[]>(`${this.baseUrl}/houses`);
   }
 
-  nextPage(): void {
-      this.page++;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-
+  getHouseById(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/houses/${id}`);
   }
 
-  previousPage(): void {
-    this.page--;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  //INPUT PAGINA HOME
+
+  selected: { purpose: string, location: string, type: string } = { purpose: '', location: '', type: '' };
+
+
+  setSelectedData(purpose: string, location: string, type: string) {
+    this.selected = { purpose, location, type };
   }
+
+  getSelectedData() {
+    return this.selected;
+  }
+
 
   filterData(purpose: string, location: string, type: string, minRooms: number = 0, minBath: number = 0) {
     let params: { [param: string]: string } = {};
@@ -49,21 +56,4 @@ export class HousesService {
 
     return this.http.get<Houses[]>(`${this.baseUrl}/houses`, { params: params });
 }
-
-  selected: { purpose: string, location: string, type: string } = { purpose: '', location: '', type: '' };
-
-
-  setSelectedData(purpose: string, location: string, type: string) {
-    this.selected = { purpose, location, type };
-  }
-
-  getSelectedData() {
-    return this.selected;
-  }
-
-  getHouseById(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/houses/${id}`);
-  }
-
-
 }

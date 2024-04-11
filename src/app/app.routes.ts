@@ -6,5 +6,6 @@ export const routes: Routes = [
   {path: 'properties', loadComponent:() => import('./pages/properties-page/properties-page.component')},
   { path: 'about', loadComponent:()=> import('./pages/about-page/about-page.component')},
   { path: 'details/:id', loadComponent:()=> import('./pages/house-details-page/house-details-page.component')},
+  { path: 'contact', loadComponent:()=> import('./pages/contact/contact.component')},
   { path: '**', redirectTo: 'home' },
 ];

@@ -9,6 +9,9 @@
         <option value="alugar">Alugar</option>
         <option value="comprar">Comprar</option>
       </select>
+      <button class="clear-icon" (click)="clearPurpose()">
+        <img src="../../../../assets/icons/icons8-excluir-50.png" alt="limpar icone">
+      </button>
     </div>
 
     <div class="select-group">
@@ -17,6 +20,9 @@
         <option value="casa">Casa</option>
         <option value="apartamento">Apartamento</option>
       </select>
+      <button class="clear-icon" (click)="clearType()">
+        <img src="../../../../assets/icons/icons8-excluir-50.png" alt="limpar icone">
+      </button>
     </div>
 
     <div class="select-group">
@@ -26,6 +32,9 @@
         <option value="Florianópolis">Florianópolis</option>
         <option value="Rio de Janeiro">Rio de Janeiro</option>
       </select>
+      <button class="clear-icon" (click)="clearLocation()">
+        <img src="../../../../assets/icons/icons8-excluir-50.png" alt="limpar icone">
+      </button>
     </div>
 
     <div class="select-group">
@@ -37,6 +46,9 @@
         <option value="5">5+</option>
         <option value="6">6+</option>
       </select>
+      <button class="clear-icon" (click)="clearRooms()">
+        <img src="../../../../assets/icons/icons8-excluir-50.png" alt="limpar icone">
+      </button>
     </div>
 
 
@@ -49,6 +61,9 @@
         <option value="5">5+</option>
         <option value="6">6+</option>
       </select>
+      <button class="clear-icon" (click)="clearBath()">
+        <img src="../../../../assets/icons/icons8-excluir-50.png" alt="limpar icone">
+      </button>
     </div>
 
     <div class="select-btn">
@@ -58,6 +73,14 @@
 
   </div>
   <div class="images-container">
+
+    @if (hasHouse == false) {
+    <div class="btn-noHouses">
+      <span class="noHouses">Nenhum resultado encontrado</span>
+      <button type="button" (click)="back()">Voltar</button>
+    </div>
+    }
+
     @for (house of houses; track $index) {
     <div class="box-images">
       <img class="house-image" [src]="'http://localhost:3000' + house.image" alt="imagem de casa"
@@ -86,14 +109,5 @@
       </div>
     </div>
     }
-  </div>
-  <div class="btn-container">
-    <button (click)="previousPage()">
-      <img class="left arrow" src="../../../../assets/icons/seta-direita.png" alt="icone de seta">
-    </button>
-    <span class="currentPage">{{this.currentPage}}</span>
-    <button (click)="nextPage()">
-      <img class="right arrow" src="../../../../assets/icons/seta-direita.png" alt="icone de seta">
-    </button>
   </div>
 </section>

@@ -3,3 +3,89 @@ section {
   max-width: 100%;
   margin: 0 auto;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5rem;
+  margin: 0 2rem;
+}
+
+.container h5 {
+  font-size: 6rem;
+  color: var(--verde);
+}
+
+.content-txt {
+  line-height: 28px;
+  font-size: 2rem;
+}
+
+.content-img {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 5rem;
+}
+
+.content-img img {
+  width: auto;
+  object-fit: cover;
+  height: 50rem;
+  border-radius: .2rem;
+  max-width: 100%;
+}
+
+
+.content-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+
+.content-btn span {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.content-btn button {
+  cursor: pointer;
+  color: #ffff;
+  max-width: 100%;
+  border: none;
+  font-weight: 700;
+  font-size: 2.4rem;
+  width: 30.6rem;
+  height: 7.2rem;
+  background-color: var(--verde);
+  margin-bottom: 10rem;
+}
+
+
+@media (max-width: 640px) {
+  .container {
+    gap: 2rem;
+  }
+
+  .container h5 {
+    font-size: 4.5rem;
+  }
+
+  .content-txt {
+    font-size: 1.6rem;
+  }
+}
+
+
+@media (max-width: 340px) {
+  .container h5 {
+    font-size: 3rem;
+  }
+}

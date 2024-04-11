@@ -3,7 +3,6 @@ section {
   margin: 0 auto;
 }
 
-
 .container {
   position: relative;
   display: flex;
@@ -15,8 +14,6 @@ section {
 
 }
 
-
-
 .chooseUs {
   display: flex;
   justify-content: center;
@@ -25,7 +22,6 @@ section {
   margin-top: 18rem;
   width: 100%;
 }
-
 
 .chooseUs .title {
   margin-bottom: 6rem;
@@ -37,7 +33,6 @@ section {
   text-transform: uppercase;
 
 }
-
 
 .chooseUs .title b {
   color: var(--verde);
@@ -63,7 +58,6 @@ section {
   max-width: 100%;
 }
 
-
 .box h3 {
   font-size: 2.6rem;
   font-weight: 800;
@@ -76,7 +70,6 @@ section {
   color: var(--verde);
 }
 
-
 .bg-assets {
   position: absolute;
   left: -15rem;
@@ -85,26 +78,22 @@ section {
 
 .rate-container {
   position: relative;
+  max-width: 100%;
   margin-top: 16rem;
   display: flex;
   align-items: center;
 }
 
-
 .swiper {
   width: 100.8rem;
-  height: 43.5rem;
   max-width: 100%;
 }
 
-
 .swiper-slide {
-  cursor: grab;
   flex-direction: column;
   display: flex;
   gap: 4rem;
 }
-
 
 .swiper-slide img {
   width: 6.2rem;
@@ -122,14 +111,12 @@ section {
   gap: .5rem;
 }
 
-
 @media (max-width: 1400px) {
   .bg-assets {
     display: none;
   }
 
   .swiper {
-    width: 100%;
     text-align: center;
   }
 
@@ -138,7 +125,6 @@ section {
     align-items: center;
   }
 }
-
 
 
 @media (max-width: 1190px) {
@@ -151,23 +137,27 @@ section {
     width: 100%;
   }
 
-}
-
-@media (max-width: 760px) {
-  .swiper {
-    height: 50rem;
-  }
 
   .swiper-slide .msg {
     font-size: 2rem;
     line-height: 157%;
+    width: 100%;
   }
 }
 
+@media (max-width: 767px) {
+  .swiper-slide .msg {
+    font-size: 1.8rem;
+  }
+}
 
 @media (max-width:576px) {
   .chooseUs .title {
     font-size: 3.5rem;
+  }
+
+  .swiper-slide .msg {
+    font-size: 1.6rem;
   }
 
 }

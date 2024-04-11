@@ -8,7 +8,6 @@ section {
 
 }
 
-
 .section2-container {
   max-width: 170rem;
   margin: 0 auto;
@@ -71,7 +70,7 @@ section {
 
 
 .swiper-container {
-  cursor: grab;
+  cursor: pointer;
   overflow: hidden;
   position: relative;
 }

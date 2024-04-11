@@ -1,0 +1,175 @@
+section {
+  width: 170rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  margin: 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 4rem;
+  margin-bottom: 10rem;
+}
+
+.txt-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.txt-content .title {
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+.txt-content .box-1 {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  letter-spacing: 2px;
+}
+
+.txt-content .sub-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+
+.txt-content .box-2 {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  letter-spacing: 2px;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  max-width: 100%;
+}
+
+.form-content .questions {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.form-content .questions span {
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+.form-content .questions p {
+  font-size: 2rem;
+}
+
+.form-content form {
+  max-width: 100%;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form input {
+  max-width: 100%;
+  height: 3.5rem;
+  border-radius: 1rem;
+  border: none;
+}
+
+form input::placeholder {
+  padding-left: 1rem;
+}
+
+form .line-1 {
+  max-width: 100%;
+  display: flex;
+  gap: 1rem;
+
+}
+
+form .line-1 input {
+  width: 30rem;
+}
+
+form .line-2 {
+  width: 100%;
+}
+
+form .line-2 input {
+  width: 100%;
+}
+
+form textarea {
+  width: 100%;
+  height: 20rem;
+  max-width: 100%;
+  border-radius: 1rem;
+}
+
+form textarea::placeholder {
+  padding-left: 1rem;
+}
+
+form button {
+  position: relative;
+  cursor: pointer;
+  background: var(--verde);
+  border: none;
+  font-size: 2.6rem;
+  color: #ffff;
+  width: 100%;
+  height: 5rem;
+}
+
+form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+form .loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 100%;
+  background: var(--verde);
+}
+
+form .loading img {
+  width: 3rem;
+  height: 3rem;
+}
+
+
+@media (max-width: 1132px) {
+  .txt-content {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .form-content {
+    text-align: center;
+  }
+}
+
+@media (max-width: 460px) {
+  form .line-1 {
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+
+  }
+
+  form .line-1 input {
+    width: 100%;
+  }
+}

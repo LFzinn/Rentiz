@@ -1,0 +1,76 @@
+<app-title-page title="Contato" />
+
+<section>
+  <div class="container">
+
+    <div class="txt-content">
+      <span class="title">Informações de contato</span>
+      <div class="box-1">
+        <span class="sub-title">Escritório Principal</span>
+        <p>730 Glenstone Ave 65802, São Paulo, BRA</p>
+      </div>
+      <div class="box-2">
+        <span class="sub-title">Contatos Online</span>
+        <span>email&#64;email.com</span>
+        <span>+123 123 654</span>
+      </div>
+      <div class="box-2">
+        <span class="sub-title">Midias Sociais</span>
+        <span>&#64;Instagram</span>
+        <span>&#64;Facebook</span>
+      </div>
+
+      <div class="box-2">
+        <span class="sub-title">Atendentes</span>
+        <span>Helena Almeida</span>
+        <span>Luísa Alves</span>
+      </div>
+    </div>
+
+    <div class="form-content">
+      <div class="questions">
+        <span>Tem Alguma Dúvida?</span>
+        <p>Utilize o formulário abaixo para entrar em contato conosco.</p>
+      </div>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="line-1">
+          <input type="text" formControlName="name" placeholder="Digite seu nome">
+
+          <input type="text" formControlName="email" placeholder="Digite seu email para contato">
+        </div>
+
+        <div class="line-2">
+          <input type="number" formControlName="phone" placeholder="Digite seu número">
+        </div>
+
+        <div class="line-2">
+          <input type="text" formControlName="subject" placeholder="O que esta buscando?">
+        </div>
+
+        <div class="line-2">
+          <textarea placeholder="Descreva Melhor..." formControlName="msg"></textarea>
+        </div>
+
+        <button type="submit" (click)="onSubmit()" [disabled]="btnDisabled">
+          @if (!this.successMessage) {
+          <span>Enviar</span>
+          }
+          @if (this.loading) {
+          <div class="loading">
+            <img src="../../../../assets/gifs/icons8-círculo-de-carga.gif" alt="">
+          </div>
+          }
+          @if (this.successMessage) {
+          <div class="sucessMsg">
+            <span>Enviado</span>
+          </div>
+          }
+        </button>
+        @if (this.validatorError) {
+        <span>Verifique se o email esta correto</span>
+        }
+      </form>
+    </div>
+
+  </div>
+</section>

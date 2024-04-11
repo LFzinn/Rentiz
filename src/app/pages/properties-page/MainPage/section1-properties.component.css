@@ -1,10 +1,10 @@
 section {
-  margin: auto 2rem;
+  margin: 0 2rem 10rem 0;
 }
 
 .filter-container {
   max-width: 170rem;
-  margin: 13rem auto;
+  margin: 10rem auto;
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
@@ -12,10 +12,11 @@ section {
 
 
 .select-group {
+  display: flex;
+  align-items: center;
   height: 4rem;
   background-color: var(--verde);
   border-radius: .2rem;
-
 }
 
 .select-group select {
@@ -26,6 +27,19 @@ section {
   height: 100%;
   background: none;
   border: none;
+  border-right: 1px solid var(--texto-cinza);
+}
+
+.clear-icon {
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 5rem;
+}
+
+.clear-icon img {
+  height: 2rem;
+  width: 2rem;
 }
 
 .select-btn {
@@ -40,7 +54,7 @@ section {
 .select-btn button {
   border-radius: .2rem;
   width: 12rem;
-  background-color: #fff;
+  background-color: var(--texto-cinza);
   cursor: pointer;
   height: 100%;
   border: none;
@@ -58,9 +72,35 @@ section {
   gap: 3.3rem;
 }
 
+.btn-noHouses {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.btn-noHouses .noHouses {
+  font-size: 4rem;
+}
+
+
+.btn-noHouses button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-bottom: 3px solid var(--verde);
+  font-size: 3rem;
+  color: #fff;
+  font-weight: 800;
+}
+
+
 .box-images {
   width: 40rem;
   max-width: 100%;
+  cursor: pointer;
 }
 
 .images-container .house-image {
@@ -111,42 +151,6 @@ section {
   text-transform: capitalize;
   font-size: 1.8rem;
 
-}
-
-
-.btn-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5rem;
-  margin: 18rem auto;
-}
-
-
-.btn-container button {
-  height: 4rem;
-  width: 5rem;
-  cursor: pointer;
-  background: none;
-  border: none;
-  background-color: aliceblue;
-  border-radius: 0.5rem;
-}
-
-.arrow {
-  width: 2rem;
-  height: 2rem;
-}
-
-
-.btn-container .left {
-  transform: scaleX(-1);
-}
-
-.currentPage {
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--verde);
 }
 
 

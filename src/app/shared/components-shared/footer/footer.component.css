@@ -117,7 +117,7 @@ footer {
   }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 360px) {
   .col-1 span {
     width: 100%;
   }

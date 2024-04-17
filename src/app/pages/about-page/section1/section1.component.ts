@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TitlePageComponent } from '../../../shared/components-shared/title-page/title-page.component';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-section1',
@@ -9,12 +8,12 @@ import { Router } from '@angular/router';
   templateUrl: './section1.component.html',
   styleUrl: './section1.component.css'
 })
-export class Section1Component {
+export class Section1Component implements OnInit {
 
-  constructor(private router: Router) {}
+  constructor() {}
 
-  goToContact() {
-    this.router.navigate(['/']);
+  ngOnInit(): void {
+    window.scrollTo(0, 0);
   }
 
 }

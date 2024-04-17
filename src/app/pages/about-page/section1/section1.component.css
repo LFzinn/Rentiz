@@ -55,17 +55,23 @@ section {
   font-weight: 700;
 }
 
-.content-btn button {
+.content-btn .about-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   color: #ffff;
   max-width: 100%;
-  border: none;
   font-weight: 700;
   font-size: 2.4rem;
   width: 30.6rem;
   height: 7.2rem;
   background-color: var(--verde);
   margin-bottom: 10rem;
+}
+
+.content-btn .about-btn:hover {
+  color: var(--background);
 }
 
 

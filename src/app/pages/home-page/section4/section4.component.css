@@ -46,11 +46,13 @@ section {
 
 
 .contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   font-size: 2.4rem;
   width: 23.3rem;
   height: 7.2rem;
-  border: none;
   background-color: var(--verde);
   color: #ffff;
 }

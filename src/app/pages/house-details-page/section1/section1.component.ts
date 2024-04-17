@@ -72,6 +72,4 @@ export class Section1Component implements OnInit {
       this.viewportScroller.scrollToAnchor(elementId);
     }
   }
-
-
 }

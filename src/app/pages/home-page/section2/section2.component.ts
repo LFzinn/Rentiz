@@ -58,7 +58,6 @@ export class Section2Component implements AfterViewInit {
 
     search(): void {
       this.router.navigate(['/properties']);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
 

@@ -15,6 +15,7 @@ section {
 }
 
 .container {
+  position: relative;
   text-align: center;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -132,12 +133,19 @@ section {
   object-fit: cover;
 }
 
+.btn-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.section2-container button {
+.home-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   color: #ffff;
   max-width: 100%;
-  border: none;
   font-weight: 700;
   font-size: 2.4rem;
   margin-top: 6.7rem;
@@ -146,7 +154,7 @@ section {
   background-color: var(--verde);
 }
 
-.section2-container button:hover {
+.home-btn:hover {
   color: var(--background);
 }
 

@@ -1,11 +1,12 @@
 section {
-  margin: 0 2rem 10rem 0;
+  margin: 0 2rem 10rem 2rem;
 }
 
 .filter-container {
   max-width: 170rem;
   margin: 10rem auto;
   display: flex;
+  justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
 }
@@ -150,15 +151,8 @@ section {
   margin-top: 2rem;
   text-transform: capitalize;
   font-size: 1.8rem;
-
 }
 
-
-@media (max-width: 768px) {
-  .filter-container {
-    justify-content: center;
-  }
-}
 
 @media (max-width: 410px) {
   .house-txt {

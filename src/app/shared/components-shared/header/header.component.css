@@ -1,24 +1,108 @@
-header {
-  max-width: 170rem;
-  margin: 0 auto;
-
-}
-
-nav {
+header, .navigation-box {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 4rem 0;
-  margin-left: 2rem;
-  margin-right: 2rem;
 }
 
-nav ul {
+header {
   display: flex;
-  gap: 4rem;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  top: 0;
+  background-color: var(--background);
+  height: 9rem;
+  justify-content: space-between;
+  padding: 0 2rem;
 }
 
-.nav-menu li a {
-  color: var(--texto-cinza);
-  font-size: 1.8rem;
+.background {
+  cursor: pointer;
+  top: 0;
+  display: none;
+  z-index: 98;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background);
+  opacity: 0.6;
+  filter: blur(2px);
+}
+
+.navigation-box {
+  gap: 5rem;
+}
+
+.logo-box {
+  position: relative;
+}
+
+.logo-box img {
+  cursor: pointer;
+}
+
+.navigation-box a {
+  color: #ffff;
+  transition: .2s;
+}
+
+.navigation-box a:hover {
+  color: var(--verde);
+}
+
+.active {
+  color: var(--verde);
+}
+
+.btn-icon {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffff;
+  cursor: pointer;
+}
+
+.arrow {
+  display: none;
+}
+
+
+.animate-sidebar {
+  animation-name: showSideBar;
+  animation-duration: .5s;
+}
+
+@keyframes showSideBar {
+  from {
+    margin-left: -100vw;
+  }
+
+  top {
+    margin-left: -10vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-icon {
+    display: block;
+  }
+
+  .arrow {
+    display: block;
+    cursor: pointer;
+    transform: rotate(-90deg);
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+
+  .navigation-box {
+    position: fixed;
+    z-index: 99;
+    flex-direction: column;
+    top: 0;
+    background-color: var(--background);
+    height: 100vh;
+    width: 50vw;
+    padding: 1.6rem;
+    margin-left: -100vw;
+  }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Section1Component } from './section1/section1.component';
 import { Section2Component } from './section2/section2.component';
@@ -19,6 +19,10 @@ import { Section4Component } from './section4/section4.component';
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
 })
-export default class HomePageComponent {
+export default class HomePageComponent implements OnInit {
+
+  ngOnInit(): void {
+    window.scrollTo(0, 0);
+  }
 
 }

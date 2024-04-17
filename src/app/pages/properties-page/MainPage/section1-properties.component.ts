@@ -24,8 +24,10 @@ export class Section1PropertiesComponent implements OnInit {
   constructor(private HousesService: HousesService, private router : Router) {}
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.loadHouses();
   }
+
 
   getData() {
     this.HousesService.getHouses().subscribe(data => {
@@ -112,6 +114,13 @@ export class Section1PropertiesComponent implements OnInit {
 
   clearBath(): void {
     this.selected.minBath = 0;
+  }
+
+  backToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
 
 }

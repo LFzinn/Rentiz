@@ -29,7 +29,8 @@ header {
 }
 
 .navigation-box {
-  gap: 5rem;
+  font-size: 2rem;
+  gap: 2rem;
 }
 
 .logo-box {
@@ -76,12 +77,12 @@ header {
     margin-left: -100vw;
   }
 
-  top {
+  to {
     margin-left: -10vw;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .btn-icon {
     display: block;
   }

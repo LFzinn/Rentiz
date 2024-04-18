@@ -7,7 +7,7 @@ import { Houses } from '../models/housesModel';
   providedIn: 'root'
 })
 export class HousesService {
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = 'https://rentiz-json-server.vercel.app';
   houses!: any[];
   page = 1;
 

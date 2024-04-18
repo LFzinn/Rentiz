@@ -13,6 +13,7 @@ header {
   height: 9rem;
   justify-content: space-between;
   padding: 0 2rem;
+  box-shadow: var(--dark-shadow);
 }
 
 .background {
@@ -83,6 +84,10 @@ header {
 }
 
 @media (max-width: 600px) {
+  header {
+    box-shadow: none;
+  }
+
   .btn-icon {
     display: block;
   }

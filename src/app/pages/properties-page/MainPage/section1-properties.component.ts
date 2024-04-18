@@ -16,7 +16,6 @@ import { HousesService } from '../../../shared/services/houses.service';
 
 
 export class Section1PropertiesComponent implements OnInit {
-
   houses: Houses[] = [];
   selected: { purpose: string, location: string, type: string, minRooms: number, minBath : number } = { purpose: '', location: '', type: '', minRooms : 0, minBath : 0};
   hasHouse: boolean = true;

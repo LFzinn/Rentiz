@@ -20,16 +20,13 @@ registerSwiperElements();
 export class Section2Component implements AfterViewInit {
   houses: Houses[] = [];
 
-  constructor(
-    private router: Router,
-    private HousesService: HousesService
-    ) {}
-
+  constructor(private router: Router, private HousesService: HousesService) {
+      this.HousesService.getHouses().subscribe(Houses => {
+        this.houses = Houses;
+      });
+    }
 
   ngAfterViewInit(): void {
-    this.HousesService.getHouses().subscribe(Houses => {
-      this.houses = Houses;
-    });
     new Swiper(".swiper-container", {
       slidesPerView: 1,
       spaceBetween: 5,
@@ -55,11 +52,9 @@ export class Section2Component implements AfterViewInit {
     });
   }
 
-
     search(): void {
       this.router.navigate(['/properties']);
     }
-
 
     showHouseDetails(id: number): void {
       this.HousesService.getHouseById(id).subscribe((house) => {

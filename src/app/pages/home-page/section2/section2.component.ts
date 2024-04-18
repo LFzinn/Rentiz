@@ -21,17 +21,18 @@ export class Section2Component implements AfterViewInit {
   houses: Houses[] = [];
 
   constructor(private router: Router, private HousesService: HousesService) {
-      this.HousesService.getHouses().subscribe(Houses => {
+      this.HousesService.getMoreVisited().subscribe(Houses => {
         this.houses = Houses;
       });
     }
+
 
   ngAfterViewInit(): void {
     new Swiper(".swiper-container", {
       direction: 'horizontal',
       slidesPerView: 1,
       spaceBetween: 5,
-      loop: true,
+      loop: false,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",

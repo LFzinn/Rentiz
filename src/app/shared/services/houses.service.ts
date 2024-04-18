@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Houses } from '../models/housesModel';
 
 @Injectable({
@@ -19,6 +19,15 @@ export class HousesService {
 
   getHouseById(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/houses/${id}`);
+  }
+
+  getMoreVisited(): Observable<Houses[]> {
+    return this.http.get<Houses[]>(`${this.baseUrl}/houses`).pipe(
+      map((houses: Houses[]) => {
+        houses.sort(() => Math.random() - 0.5);
+        return houses.slice(0, 5);
+      })
+    );
   }
 
   //INPUT PAGINA HOME

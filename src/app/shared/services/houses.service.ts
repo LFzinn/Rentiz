@@ -11,7 +11,6 @@ export class HousesService {
   houses!: any[];
   page = 1;
 
-
   constructor(private http: HttpClient) {}
 
   getHouses(): Observable<Houses[]> {

@@ -26,31 +26,50 @@ export class Section2Component implements AfterViewInit {
       });
     }
 
-  ngAfterViewInit(): void {
-    new Swiper(".swiper-container", {
-      slidesPerView: 1,
-      spaceBetween: 5,
-      loop: false,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      breakpoints: {
-        576: {
-          slidesPerView: 2,
-          spaceBetween: 10,
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 30,
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        },
-      },
-    });
-  }
+    ngAfterViewInit(): void {
+      this.HousesService.getHouses().subscribe((houses: any[]) => {
+        this.houses = houses;
+        new Swiper(".swiper-container", {
+          slidesPerView: 1,
+          spaceBetween: 5,
+          loop: false,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          breakpoints: {
+            576: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+          },
+          on: {
+            slideChangeTransitionStart: (swiper: Swiper) => {
+              const slides = swiper.slides;
+              slides.forEach((slide, index) => {
+                if (index !== swiper.activeIndex) {
+                  slide.classList.add('swiper-slide-hidden');
+                }
+              });
+            },
+            slideChangeTransitionEnd: (swiper: Swiper) => {
+              const slides = swiper.slides;
+              slides.forEach((slide, index) => {
+                slide.classList.remove('swiper-slide-hidden');
+              });
+            },
+          },
+        });
+      });
+    }
 
     search(): void {
       this.router.navigate(['/properties']);

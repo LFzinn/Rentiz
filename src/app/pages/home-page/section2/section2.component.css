@@ -72,7 +72,6 @@ section {
 
 
 .swiper-container {
-  display: flex !important;
   cursor: pointer;
   overflow: hidden;
   position: relative;

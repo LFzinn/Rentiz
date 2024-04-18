@@ -4,12 +4,10 @@ import 'swiper/swiper-bundle.css';
 import { AfterViewInit, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import Swiper from 'swiper';
-import { register as registerSwiperElements } from 'swiper/element/bundle';
 import { Houses } from '../../../shared/models/housesModel';
 
 
 
-registerSwiperElements();
 @Component({
   selector: 'app-section2',
   standalone: true,
@@ -29,7 +27,6 @@ export class Section2Component implements AfterViewInit {
 
   ngAfterViewInit(): void {
     new Swiper(".swiper-container", {
-      direction: 'horizontal',
       slidesPerView: 1,
       spaceBetween: 5,
       loop: false,

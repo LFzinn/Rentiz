@@ -84,11 +84,6 @@ section {
   gap: 2rem;
 }
 
-.swiper-slide-hidden {
-  display: none;
-  transition: opacity 0.3s ease;
-}
-
 .slider-txt {
   display: flex;
   flex-direction: column;

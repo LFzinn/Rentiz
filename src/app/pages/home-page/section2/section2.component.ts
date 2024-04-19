@@ -1,10 +1,9 @@
-import { HousesService } from '../../../shared/services/houses.service';
-import 'swiper/swiper-bundle.css';
-
 import { AfterViewInit, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import Swiper from 'swiper';
+
 import { Houses } from '../../../shared/models/housesModel';
+import { HousesService } from '../../../shared/services/houses.service';
 
 
 
@@ -19,10 +18,10 @@ export class Section2Component implements AfterViewInit {
   houses: Houses[] = [];
 
   constructor(private router: Router, private HousesService: HousesService) {
-      this.HousesService.getMoreVisited().subscribe(Houses => {
-        this.houses = Houses;
-      });
-    }
+    this.HousesService.getMoreVisited().subscribe(Houses => {
+      this.houses = Houses;
+    });
+  }
 
 
   ngAfterViewInit(): void {
@@ -51,14 +50,14 @@ export class Section2Component implements AfterViewInit {
     });
   }
 
-    search(): void {
-      this.router.navigate(['/properties']);
-    }
+  search(): void {
+    this.router.navigate(['/properties']);
+  }
 
-    showHouseDetails(id: number): void {
-      this.HousesService.getHouseById(id).subscribe((house) => {
+  showHouseDetails(id: number): void {
+    this.HousesService.getHouseById(id).subscribe((house) => {
       this.router.navigate(['/details', id]);
-      });
-    }
+    });
+  }
 
 }

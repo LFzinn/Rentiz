@@ -11,7 +11,6 @@ section {
   justify-content: center;
   margin-left: 2rem;
   margin-right: 2rem;
-
 }
 
 .chooseUs {
@@ -152,6 +151,10 @@ section {
 }
 
 @media (max-width:576px) {
+  .chooseUs {
+    margin-top: 5rem;
+  }
+
   .chooseUs .title {
     font-size: 3.5rem;
   }

@@ -183,8 +183,6 @@ main {
     border-right: 1px solid var(--texto-cinza);
   }
 
-
-
   .select-container .select-btn button {
     width: 12.3rem;
     max-width: 100%;
@@ -195,7 +193,6 @@ main {
     color: #ffff;
   }
 
-
   .logos-group {
     display: flex;
     gap: 3rem;
@@ -203,8 +200,6 @@ main {
     align-items: center;
     flex-wrap: wrap;
   }
-
-
 
   @media (max-width: 630px) {
     .select-container {
@@ -225,6 +220,14 @@ main {
   }
 
   @media (max-width: 430px) {
+    .right-group img {
+      display: none;
+    }
+
+    .main-groups {
+      margin-bottom: 3rem;
+    }
+
     .select-container .select-group select {
       width: 30rem;
     }
@@ -234,7 +237,7 @@ main {
     }
 
     .logos-group {
-      display: flex;
+      display: none;
       flex-direction: column;
       gap: 5rem;
     }

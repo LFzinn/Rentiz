@@ -11,7 +11,6 @@ section {
   flex-wrap: wrap;
 }
 
-
 .select-group {
   display: flex;
   align-items: center;
@@ -52,16 +51,27 @@ section {
   height: 4rem;
 }
 
+
 .select-btn button {
   border-radius: .2rem;
   width: 12rem;
-  background-color: var(--texto-cinza);
   cursor: pointer;
+  background-color: #fff;
+  color: var(--background);
   height: 100%;
   border: none;
   padding: 0 1rem;
   font-size: 1.8rem;
 }
+
+.select-btn .search-filter:hover {
+  background-color: var(--verde);
+}
+
+.select-btn .search-clear:hover {
+  background-color: #d22e2e;
+}
+
 
 .images-container {
   max-width: 170rem;
@@ -86,7 +96,6 @@ section {
   font-size: 4rem;
 }
 
-
 .btn-noHouses button {
   cursor: pointer;
   background: none;
@@ -96,7 +105,6 @@ section {
   color: #fff;
   font-weight: 800;
 }
-
 
 .box-images {
   width: 40rem;
@@ -154,20 +162,63 @@ section {
 }
 
 
-@media (max-width: 410px) {
+@media (max-width: 430px) {
+  .filter-container {
+    margin: 5rem auto 10rem auto;
+  }
+
+  .select-group {
+    height: 4rem;
+    background-color: #ffff;
+    border-radius: 1.5rem;
+    max-width: 100%;
+  }
+
+  .select-group select {
+    color: var(--background);
+    font-size: 1.6rem;
+    width: 30rem;
+    max-width: 100%;
+  }
+
+  .select-btn button {
+    border-radius: .5rem;
+  }
+
   .house-txt {
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-top: 1.5rem;
   }
 
   .details {
-    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
+  .house-txt .details .details-group {
+    font-size: 1.6rem;
+    gap: .3rem;
+  }
+
+  .house-txt .details .details-group img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .house-txt .details {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
   .purpose {
     width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .details {
+    flex-direction: column;
   }
 }

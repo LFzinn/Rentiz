@@ -64,6 +64,7 @@ section {
 
 .form-content .questions p {
   font-size: 2rem;
+  margin-bottom: 3rem;
 }
 
 .form-content form {
@@ -75,6 +76,16 @@ section {
   justify-content: center;
 }
 
+.form-lineBox {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 1rem;
+}
+
 form input {
   max-width: 100%;
   height: 3.5rem;
@@ -82,15 +93,10 @@ form input {
   border: none;
 }
 
-form input::placeholder {
-  padding-left: 1rem;
-}
-
 form .line-1 {
   max-width: 100%;
   display: flex;
   gap: 1rem;
-
 }
 
 form .line-1 input {
@@ -99,6 +105,10 @@ form .line-1 input {
 
 form .line-2 {
   width: 100%;
+}
+
+form .line-2 label {
+  display: none;
 }
 
 form .line-2 input {
@@ -110,10 +120,8 @@ form textarea {
   height: 20rem;
   max-width: 100%;
   border-radius: 1rem;
-}
-
-form textarea::placeholder {
-  padding-left: 1rem;
+  border-radius: 1.5rem;
+  padding: 1.5rem 0 0 1.5rem;
 }
 
 form button {
@@ -147,7 +155,6 @@ form .loading img {
   height: 3rem;
 }
 
-
 @media (max-width: 1132px) {
   .txt-content {
     text-align: center;
@@ -161,15 +168,48 @@ form .loading img {
   }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 670px) {
   form .line-1 {
     flex-direction: column;
-    gap: 2rem;
     width: 100%;
+  }
 
+  .form-content form {
+    gap: 1.5rem;
+  }
+
+  form .line-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  form .line-2 label {
+    display: block;
+  }
+
+  label {
+    margin-bottom: 0;
+    margin: 1rem 0;
   }
 
   form .line-1 input {
     width: 100%;
   }
+}
+
+@media (max-width: 430px) {
+  .container {
+    margin-bottom: 3rem;
+  }
+
+  form input {
+    border-radius: 1.5rem;
+  }
+
+  form button {
+    border-radius: 1.5rem;
+  }
+
+
 }

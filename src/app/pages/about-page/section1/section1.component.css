@@ -68,6 +68,7 @@ section {
   height: 7.2rem;
   background-color: var(--verde);
   margin-bottom: 10rem;
+  border-radius: 1.5rem;
 }
 
 .content-btn .about-btn:hover {
@@ -78,6 +79,10 @@ section {
 @media (max-width: 640px) {
   .container {
     gap: 2rem;
+  }
+
+  .content-btn .about-btn {
+    margin-bottom: 3rem;
   }
 
   .container h5 {

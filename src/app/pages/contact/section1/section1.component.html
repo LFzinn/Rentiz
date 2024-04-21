@@ -34,17 +34,25 @@
       </div>
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="line-1">
-          <input type="text" formControlName="name" placeholder="Digite seu nome">
+          <div class="form-lineBox">
+            <label for="name">Nome:</label>
+            <input id="name" type="text" formControlName="name" placeholder="Digite seu nome">
+          </div>
 
-          <input type="text" formControlName="email" placeholder="Digite seu email para contato">
+          <div class="form-lineBox">
+            <label for="email">Email:</label>
+            <input id="email" type="text" formControlName="email" placeholder="Digite seu email para contato">
+          </div>
         </div>
 
         <div class="line-2">
-          <input type="number" formControlName="phone" placeholder="Digite seu número">
+          <label for="number">Número:</label>
+          <input id="number" type="number" formControlName="phone" placeholder="Digite seu número">
         </div>
 
         <div class="line-2">
-          <input type="text" formControlName="subject" placeholder="O que esta buscando?">
+          <label for="title-input">O que Busca?</label>
+          <input id="title-input" type="text" formControlName="subject" placeholder="O que esta buscando?">
         </div>
 
         <div class="line-2">

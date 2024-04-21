@@ -2,18 +2,13 @@
 
   <div class="section2-container">
     <div class="container">
-
       <div class="title-box">
         <h2>Mais <b>procuradas</b></h2>
       </div>
 
-
-
       <div class="slide-box">
-
         <div class="swiper-container">
           <div class="swiper-wrapper">
-
             @for (house of houses; track $index) {
             <div class="swiper-slide">
               <img class="house-image" [src]="house.image" alt="casa" (click)="showHouseDetails(house.id)">

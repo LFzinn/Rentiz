@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 import { TitlePageComponent } from '../../../shared/components-shared/title-page/title-page.component';
 import { Houses } from '../../../shared/models/housesModel';
+import { RealPipe } from '../../../shared/pipes/real.pipe';
 import { HousesService } from '../../../shared/services/houses.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { HousesService } from '../../../shared/services/houses.service';
     standalone: true,
     templateUrl: './section1-properties.component.html',
     styleUrl: './section1-properties.component.css',
-    imports: [ FormsModule, TitlePageComponent ]
+    imports: [ FormsModule, TitlePageComponent, RealPipe ]
 })
 
 

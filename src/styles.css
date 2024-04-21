@@ -47,6 +47,10 @@ body {
   color: #ffff;
 }
 
+input {
+  padding-left: 1rem;
+}
+
 html, body {
   height: 100%;
 }

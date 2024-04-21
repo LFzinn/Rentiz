@@ -67,8 +67,8 @@
     </div>
 
     <div class="select-btn">
-      <button type="button" (click)="Search()">Pesquisar</button>
-      <button type="button" (click)="clear()">Limpar</button>
+      <button class="search-filter" type="button" (click)="Search()">Pesquisar</button>
+      <button class="search-clear" type="button" (click)="clear()">Limpar</button>
     </div>
 
   </div>
@@ -103,7 +103,7 @@
         </div>
         <div class="purpose">
           <span>Para {{ house.purpose }}</span>
-          <span>Preço: ${{ house.price }}</span>
+          <span>Preço: {{ house.price | real }} </span>
         </div>
       </div>
     </div>

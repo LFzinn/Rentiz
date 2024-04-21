@@ -1,15 +1,16 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
 import { TitlePageComponent } from '../../../shared/components-shared/title-page/title-page.component';
+import { RealPipe } from '../../../shared/pipes/real.pipe';
 import { HousesService } from '../../../shared/services/houses.service';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-section1',
   standalone: true,
-  imports: [TitlePageComponent, ReactiveFormsModule],
+  imports: [TitlePageComponent, ReactiveFormsModule, RealPipe],
   templateUrl: './section1.component.html',
   styleUrl: './section1.component.css'
 })

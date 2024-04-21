@@ -51,7 +51,6 @@ section {
   height: 4rem;
 }
 
-
 .select-btn button {
   border-radius: .2rem;
   width: 12rem;
@@ -142,7 +141,6 @@ section {
   margin-bottom: 2rem;
 }
 
-
 .house-txt .details .details-group {
   display: flex;
   align-items: center;
@@ -160,7 +158,6 @@ section {
   text-transform: capitalize;
   font-size: 1.8rem;
 }
-
 
 @media (max-width: 430px) {
   .filter-container {

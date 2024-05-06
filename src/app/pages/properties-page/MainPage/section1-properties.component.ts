@@ -6,13 +6,14 @@ import { TitlePageComponent } from '../../../shared/components-shared/title-page
 import { Houses } from '../../../shared/models/housesModel';
 import { RealPipe } from '../../../shared/pipes/real.pipe';
 import { HousesService } from '../../../shared/services/houses.service';
+import { SkeletonLoadingComponent } from '../../../shared/skeleton/skeleton-loading/skeleton-loading.component';
 
 @Component({
     selector: 'app-section1-properties',
     standalone: true,
     templateUrl: './section1-properties.component.html',
     styleUrl: './section1-properties.component.css',
-    imports: [ FormsModule, TitlePageComponent, RealPipe ]
+    imports: [ FormsModule, TitlePageComponent, RealPipe, SkeletonLoadingComponent ]
 })
 
 
@@ -20,14 +21,17 @@ export class Section1PropertiesComponent implements OnInit {
   houses: Houses[] = [];
   selected: { purpose: string, location: string, type: string, minRooms: number, minBath : number } = { purpose: '', location: '', type: '', minRooms : 0, minBath : 0};
   hasHouse: boolean = true;
+  loading: boolean = true;
 
   constructor(private HousesService: HousesService, private router : Router) {}
 
   ngOnInit() {
     window.scrollTo(0, 0);
     this.loadHouses();
+    setTimeout(() => {
+      this.loading = false;
+    }, 1200);
   }
-
 
   getData() {
     this.HousesService.getHouses().subscribe(data => {

@@ -1,0 +1,101 @@
+.container-skeleton {
+  max-width: 170rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  gap: 3.3rem;
+}
+
+.skeleton {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.skeleton-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  width: 40rem;
+  max-width: 100%;
+}
+
+
+.skt-img {
+  width: 40rem;
+  height: 30rem;
+  border-radius: .2rem;
+}
+
+.line1 {
+  position: relative;
+  width: 70%;
+  height: 2rem;
+  border-radius: .2rem;
+}
+
+.line2 {
+  position: relative;
+  width: 50%;
+  height: 2rem;
+  border-radius: .2rem;
+}
+
+.icons-box {
+  display: flex;
+  gap: 2rem;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  gap: .5rem;
+}
+
+.icon-skt {
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: .2rem;
+}
+
+.line3 {
+  position: relative;
+  width: 5.5rem;
+  height: 1.5rem;
+  border-radius: .2rem;
+}
+
+.animation {
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #363636;
+  }
+
+  100% {
+    background-color: #2a2a2a;
+  }
+}
+
+@media (max-width: 460px) {
+  .skeleton-box {
+    align-items: center;
+    width: 100%;
+  }
+
+  .skt-img {
+    width: 100%;
+    height: 30rem;
+  }
+
+  .icons-box {
+    gap: 1rem;
+  }
+}

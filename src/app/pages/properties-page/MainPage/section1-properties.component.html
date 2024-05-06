@@ -72,6 +72,12 @@
     </div>
 
   </div>
+
+  @if (this.loading) {
+  <app-skeleton-loading />
+  }
+
+  @if (loading == false) {
   <div class="images-container">
 
     @if (hasHouse == false) {
@@ -109,4 +115,5 @@
     </div>
     }
   </div>
+  }
 </section>

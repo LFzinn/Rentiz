@@ -24,7 +24,6 @@ export class Section1Component implements OnInit{
     });
   }
 
-
   selected: { purpose: string, location: string, type: string } = { purpose: '', location: '', type: '' };
 
   purposeSelected(event: Event) {

@@ -9,7 +9,6 @@ import { Houses } from '../models/housesModel';
 export class HousesService {
   private baseUrl = 'https://rentiz-json-server.vercel.app';
   houses!: any[];
-  page = 1;
 
   constructor(private http: HttpClient) {}
 
@@ -33,7 +32,6 @@ export class HousesService {
   //INPUT PAGINA HOME
 
   selected: { purpose: string, location: string, type: string } = { purpose: '', location: '', type: '' };
-
 
   setSelectedData(purpose: string, location: string, type: string) {
     this.selected = { purpose, location, type };

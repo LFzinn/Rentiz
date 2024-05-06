@@ -18,7 +18,7 @@
 
 ## 📀Demonstração
 
-[LINK DO PROJETO](https://rentiz-nine.vercel.app/home)
+[LINK DO PROJETO](https://rentiz-nine.vercel.app/home){:target="\_blank"}
 
 ## 💿Tecnologias
 
@@ -46,8 +46,8 @@ $ npm run start
 ## Creditos
 
 - O codigo do site foi desenvolvido inteiramente por Luiz Fernando
-- O layout do site foi baseado neste [Template](https://demo.templatesjungle.com/rentiz/)
+- O layout do site foi baseado neste [Template](https://demo.templatesjungle.com/rentiz/){:target="\_blank"}
 
 ### Entre em contato comigo
 
-[Linkedin](https://www.linkedin.com/in/lfsilvaferreira/)
+[Linkedin](https://www.linkedin.com/in/lfsilvaferreira/){:target="\_blank"}

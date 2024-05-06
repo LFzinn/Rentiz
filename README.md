@@ -4,30 +4,30 @@
 
 ## Índice
 
-- <a hfer ="#layout">Layout</a>
-- <a hfer ="#demonstracao">Demonstração</a>
-- <a hfer ="#rodar">Como rodar o projeto?</a>
-- <a hfer ="#tecnologias">Tecnologias</a>
-- <a hfer ="#creditos">Creditos</a>
+- <a href ="#layout">Layout</a>
+- <a href ="#demonstracao">Demonstração</a>
+- <a href ="#testar">Como rodar o projeto?</a>
+- <a href ="#tecnologias">Tecnologias</a>
+- <a href ="#creditos">Creditos</a>
 
-## 💿Layout
+## Layout
 
 - Totalmente responsivo e com melhorias de UX para as versões mobile.
 - Lazy Loading (carregamento das páginas apenas quando são acessadas).
 - Skeleton Loading (Simula o layout do site para o usuário ter um retorno visual enquanto a página está carregando).
 
-## 📀Demonstração
+## Demonstração
 
 <a href="https://rentiz-nine.vercel.app/home" target="_blank">LINK DO PROJETO</a>
 
-## 💿Tecnologias
+## Tecnologias
 
 - Angular 17
 - TypeScript 5.2.2
 - CSS
 - Swiper.js
 
-## 📀Como rodar o projeto?
+## Testar
 
 ```bash
 # Clone este repositório

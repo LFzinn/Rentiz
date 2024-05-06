@@ -1,27 +1,53 @@
-# GoCar
+![Rentiz](./src/assets/logo/logo.png)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
+**Rentiz é um projeto de estudo que simula uma instituição imobiliária. O objetivo do site é atuar como intermediário entre a empresa imobiliária e o cliente.**
 
-## Development server
+## Índice
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- <a hfer ="#layout">Layout</a>
+- <a hfer ="#demonstracao">Demonstração</a>
+- <a hfer ="#rodar">Como rodar o projeto?</a>
+- <a hfer ="#tecnologias">Tecnologias</a>
+- <a hfer ="#creditos">Creditos</a>
 
-## Code scaffolding
+## 💿Layout
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Totalmente responsivo e com melhorias de UX para as versões mobile.
+- Lazy Loading (carregamento das páginas apenas quando são acessadas).
+- Skeleton Loading (Simula o layout do site para o usuário ter um retorno visual enquanto a página está carregando).
 
-## Build
+## 📀Demonstração
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+[LINK DO PROJETO](https://rentiz-nine.vercel.app/home)
 
-## Running unit tests
+## 💿Tecnologias
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Angular 17
+- TypeScript 5.2.2
+- CSS
+- Swiper.js
 
-## Running end-to-end tests
+## 📀Como rodar o projeto?
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+# Clone este repositório
+$ git clone LinkRepo
 
-## Further help
+# Acesse a pasta do projeto no seu terminal
+$ cd Rentiz
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Instale as dependencias
+$ npm install
+
+# Execute a aplicação
+$ npm run start
+```
+
+## Creditos
+
+- O codigo do site foi desenvolvido inteiramente por Luiz Fernando
+- O layout do site foi baseado neste [Template](https://demo.templatesjungle.com/rentiz/)
+
+### Entre em contato comigo
+
+[Linkedin](https://www.linkedin.com/in/lfsilvaferreira/)

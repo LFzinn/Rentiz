@@ -199,24 +199,11 @@ main {
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-
-    .select-container .select-group select {
-      width: 40rem;
-    }
-
-    .select-container .select-btn button {
-      width: 40rem;
-    }
-
-  }
-
-  @media (max-width: 430px) {
-    .select-container {
       gap: 2rem;
     }
 
     .select-container .select-group select {
+      width: 40rem;
       border-radius: 1.5rem;
       height: 6rem;
       font-size: 1.6rem;
@@ -224,10 +211,14 @@ main {
     }
 
     .select-container .select-btn button {
+      width: 40rem;
       height: 6rem;
       border-radius: 1.5rem;
     }
 
+  }
+
+  @media (max-width: 430px) {
     .right-group img {
       display: none;
     }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
+import { Observable, map, shareReplay } from 'rxjs';
 import { Houses } from '../models/housesModel';
 
 @Injectable({
@@ -9,11 +9,12 @@ import { Houses } from '../models/housesModel';
 export class HousesService {
   private baseUrl = 'https://rentiz-json-server.vercel.app';
   houses!: any[];
+  houses$ = this.http.get<Houses[]>(`${this.baseUrl}/houses`).pipe(shareReplay(1));
 
   constructor(private http: HttpClient) {}
 
   getHouses(): Observable<Houses[]> {
-    return this.http.get<Houses[]>(`${this.baseUrl}/houses`);
+    return this.houses$;
   }
 
   getHouseById(id: number): Observable<any> {
@@ -21,7 +22,7 @@ export class HousesService {
   }
 
   getMoreVisited(): Observable<Houses[]> {
-    return this.http.get<Houses[]>(`${this.baseUrl}/houses`).pipe(
+    return this.houses$.pipe(
       map((houses: Houses[]) => {
         houses.sort(() => Math.random() - 0.5);
         return houses.slice(0, 5);
@@ -40,7 +41,6 @@ export class HousesService {
   getSelectedData() {
     return this.selected;
   }
-
 
   filterData(purpose: string, location: string, type: string, minRooms: number = 0, minBath: number = 0) {
     let params: { [param: string]: string } = {};

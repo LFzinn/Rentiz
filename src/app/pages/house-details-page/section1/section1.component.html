@@ -3,7 +3,7 @@
 <section>
   <div class="container">
     <div class="box1">
-      @for (house of houses; track $index) {
+      @for (house of houses; track house.id) {
       <img class="house-image" [src]="house.image" alt="casa">
       }
       <div class="form-box" id="form-box">
@@ -56,7 +56,7 @@
           <div class="image-details">
             <img class="fix" src='../../../../assets/icons/bed.png' alt="cama">
           </div>
-          @for (house of houses; track $index) {
+          @for (house of houses; track house.id) {
           <div class="text-details">
             <span class="text-detailTitle">Quartos</span>
             <span class="result">{{house.rooms}}</span>
@@ -68,7 +68,7 @@
           <div class="image-details">
             <img src='../../../../assets/icons/banheira.png' alt="Banheiros">
           </div>
-          @for (house of houses; track $index) {
+          @for (house of houses; track house.id) {
           <div class="text-details">
             <span class="text-detailTitle">Banheiros</span>
             <span class="result">{{house.bathroom}}</span>
@@ -80,7 +80,7 @@
           <div class="image-details">
             <img src='../../../../assets/icons/area.png' alt="cama">
           </div>
-          @for (house of houses; track $index) {
+          @for (house of houses; track house.id) {
           <div class="text-details">
             <span class="text-detailTitle">m²</span>
             <span class="result">{{house.sqft}}</span>
@@ -94,7 +94,7 @@
     <div class="box3">
       <h4 class="box3-title">Detalhes</h4>
       <div class="content-container">
-        @for (house of houses; track $index) {
+        @for (house of houses; track house.id) {
         <div class="content">
           <span><b>Propósito</b> : {{house.purpose}}</span>
           <span><b>Preço</b>: {{house.price | real }}</span>

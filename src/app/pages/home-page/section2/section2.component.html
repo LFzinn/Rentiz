@@ -9,7 +9,7 @@
       <div class="slide-box">
         <div class="swiper-container">
           <div class="swiper-wrapper">
-            @for (house of houses; track $index) {
+            @for (house of houses; track house.id) {
             <div class="swiper-slide">
               <img class="house-image" [src]="house.image" alt="casa" (click)="showHouseDetails(house.id)">
               <div class="slider-txt">

@@ -17,7 +17,6 @@ export class Section1Component implements OnInit{
   houses: Houses[] = [];
 
   constructor(private router: Router, private HousesService: HousesService) {}
-
   ngOnInit() {
     this.HousesService.getHouses().subscribe(Houses => {
       this.houses = Houses;

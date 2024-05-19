@@ -40,9 +40,8 @@ export class Section1PropertiesComponent implements OnInit {
   }
 
   showHouseDetails(id: number): void {
-    this.HousesService.getHouseById(id).subscribe((house) => {
+    this.HousesService.getHouseById(id)
     this.router.navigate(['/details', id]);
-    });
   }
 
   back(): void {

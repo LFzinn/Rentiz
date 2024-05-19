@@ -55,9 +55,8 @@ export class Section2Component implements AfterViewInit {
   }
 
   showHouseDetails(id: number): void {
-    this.HousesService.getHouseById(id).subscribe((house) => {
+    this.HousesService.getHouseById(id)
       this.router.navigate(['/details', id]);
-    });
   }
 
 }

@@ -19,7 +19,7 @@ import { Section4Component } from './section4/section4.component';
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
 })
-export default class HomePageComponent implements OnInit {
+export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     window.scrollTo(0, 0);

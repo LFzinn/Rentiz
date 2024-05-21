@@ -12,6 +12,6 @@ import { Section1PropertiesComponent } from './MainPage/section1-properties.comp
   templateUrl: './properties-page.component.html',
   styleUrl: './properties-page.component.css'
 })
-export default class PropertiesPageComponent {
+export class PropertiesPageComponent {
 
 }

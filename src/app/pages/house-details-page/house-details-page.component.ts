@@ -8,6 +8,6 @@ import { Section1Component } from './section1/section1.component';
   templateUrl: './house-details-page.component.html',
   styleUrl: './house-details-page.component.css'
 })
-export default class HouseDetailsPageComponent {
+export class HouseDetailsPageComponent {
 
 }

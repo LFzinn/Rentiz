@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 
 import { Houses } from '../../../shared/models/housesModel';
 import { HouseFilterService } from '../../../shared/services/filter.service';
-import { HousesService } from '../../../shared/services/houses.service';
 
 @Component({
   selector: 'app-section1',
@@ -13,10 +12,9 @@ import { HousesService } from '../../../shared/services/houses.service';
   templateUrl: './section1.component.html',
   styleUrl: './section1.component.css'
 })
-export class Section1Component implements OnInit{
+export class Section1Component {
   houses: Houses[] = [];
 
-  private HousesService = inject(HousesService);
   private HouseFilterService = inject(HouseFilterService);
 
   selected = {
@@ -27,11 +25,6 @@ export class Section1Component implements OnInit{
 
   constructor(private router: Router) {}
 
-  ngOnInit() {
-    this.HousesService.getHouses().subscribe(Houses => {
-      this.houses = Houses;
-    });
-  }
 
   search(): void {
     this.HouseFilterService.setSelectedData(

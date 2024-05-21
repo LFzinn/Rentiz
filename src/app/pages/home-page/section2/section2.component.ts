@@ -26,13 +26,10 @@ export class Section2Component implements AfterViewInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.houses$ = this.HousesService.getHouses().pipe(
-      map(houses => {
-        houses.sort(() => Math.random() - 0.5);
-        return houses.slice(0, 5);
-      })
-    );
+    this.houses$ = this.HousesService.moreVisited(5);
   }
+
+
 
   ngAfterViewInit(): void {
     new Swiper(".swiper-container", {

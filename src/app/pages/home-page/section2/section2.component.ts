@@ -1,28 +1,38 @@
-import { AfterViewInit, Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { AfterViewInit, Component, inject } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import Swiper from 'swiper';
 
 import { Houses } from '../../../shared/models/housesModel';
 import { HousesService } from '../../../shared/services/houses.service';
+import { Observable, map } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 
 
 @Component({
   selector: 'app-section2',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, RouterModule],
   templateUrl: './section2.component.html',
   styleUrl: './section2.component.css'
 })
+
 export class Section2Component implements AfterViewInit {
   houses: Houses[] = [];
 
-  constructor(private router: Router, private HousesService: HousesService) {
-    this.HousesService.getMoreVisited().subscribe(Houses => {
-      this.houses = Houses;
-    });
-  }
+  private HousesService = inject(HousesService);
+  houses$!: Observable<Houses[]>;
 
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    this.houses$ = this.HousesService.getHouses().pipe(
+      map(houses => {
+        houses.sort(() => Math.random() - 0.5);
+        return houses.slice(0, 5);
+      })
+    );
+  }
 
   ngAfterViewInit(): void {
     new Swiper(".swiper-container", {
@@ -53,10 +63,4 @@ export class Section2Component implements AfterViewInit {
   search(): void {
     this.router.navigate(['/properties']);
   }
-
-  showHouseDetails(id: number): void {
-    this.HousesService.getHouseById(id)
-      this.router.navigate(['/details', id]);
-  }
-
 }

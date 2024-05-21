@@ -2,7 +2,6 @@
 
 <section>
   <div class="filter-container">
-
     <div class="select-group">
       <select [(ngModel)]="selected.purpose">
         <option value="" disabled selected hidden>Propósito</option>
@@ -87,9 +86,12 @@
     </div>
     }
 
-    @for (house of houses; track house.id) {
+
+    @for (house of houses$ | async; track house.id) {
     <div class="box-images">
-      <img class="house-image" [src]="house.image" alt="casa" (click)="showHouseDetails(house.id)">
+      <a [routerLink]="['/properties',house.id]">
+        <img class="house-image" [src]="house.image" alt="casa">
+      </a>
       <div class="house-txt">
         <span class="title">{{house.name}}</span>
         <span class="description">{{house.type}}, {{ house.location }}</span>

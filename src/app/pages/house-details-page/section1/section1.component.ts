@@ -1,16 +1,18 @@
-import { ViewportScroller } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { CommonModule, ViewportScroller } from '@angular/common';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
 import { TitlePageComponent } from '../../../shared/components-shared/title-page/title-page.component';
 import { RealPipe } from '../../../shared/pipes/real.pipe';
 import { HousesService } from '../../../shared/services/houses.service';
+import { getParamsID } from '../../../shared/functions/get-params-id';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-section1',
   standalone: true,
-  imports: [TitlePageComponent, ReactiveFormsModule, RealPipe],
+  imports: [TitlePageComponent, ReactiveFormsModule, RealPipe, CommonModule],
   templateUrl: './section1.component.html',
   styleUrl: './section1.component.css'
 })
@@ -18,8 +20,7 @@ export class Section1Component implements OnInit {
   houses: any[] = [];
   dataForm: FormGroup;
 
-  constructor(private HousesService : HousesService,
-    private route: ActivatedRoute,
+  constructor(
     private viewportScroller: ViewportScroller,
     private formBuilder: FormBuilder) {
       this.dataForm = this.formBuilder.group({
@@ -30,16 +31,13 @@ export class Section1Component implements OnInit {
       });
     }
 
-  ngOnInit(): void {
-    window.scrollTo(0, 0);
-    const idParam = this.route.snapshot.paramMap.get('id');
-    if (idParam !== null) {
-        const id = +idParam;
-        this.HousesService.getHouseById(id).subscribe((house) => {
-            this.houses.push(house);
-        });
-    }
-  }
+  ngOnInit(): void { window.scrollTo(0, 0);}
+
+  private HousesService = inject(HousesService);
+
+  house$ = getParamsID().pipe(
+    switchMap((id) => this.HousesService.getHouseById(id))
+  );
 
   get email() { return this.dataForm.get('email'); }
 

@@ -30,6 +30,7 @@
 - Swiper.js
 - RXJS
 - Lazy Loading
+- NX
 
 ## Testar
 
